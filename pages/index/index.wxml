@@ -1,0 +1,70 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="zan-cell">
+    <view class="zan-cell__bd">您的提问：</view>
+    <view class="zan-cell__ft">{{Response.Question}}</view>
+  </view>
+  <view class="zan-cell">
+    <view class="zan-cell__bd">提问单词：</view>
+    <view class="zan-cell__ft">{{Response.World}}</view>
+  </view>
+  <view class="zan-cell">
+    <view class="zan-cell__bd">提问语言[支持英语日语韩语]：</view>
+    <view class="zan-cell__ft">{{Response.Language}}</view>
+  </view>
+  <view class="zan-cell">
+    <view class="zan-cell__bd">答案：</view>
+    <view class="zan-cell__ft">{{Response.Answer}}</view>
+  </view>
+  <view class="zan-row">
+    <view class="zan-col zan-col-12">
+      <view class="record-content" animation="{{contentAnimation}}">
+        <view bindtap="playAnswer" class="content-wripper">
+          <text class="t">朗读答案〞</text>
+          <image src="{{isPlaying?playUi.playing:playUi.play}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class="zan-col zan-col-12">
+      <view class="record-content" animation="{{contentAnimation}}">
+        <view bindtap="play" class="content-wripper">
+          <text class="t">我的录音</text>
+          <image src="{{isPlaying?playUi.playing:playUi.play}}"></image>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+
+  <view class="zan-row">
+    <view wx:if="{{isSpeaking}}" class="speak-style">
+      <image class="sound-style" src="../../dist/images/voice_icon_speech_sound_1.png"></image>
+      <image wx:if="{{speakingPicIndex==2}}" class="sound-style" src="../../dist/images/voice_icon_speech_sound_2.png"></image>
+      <image wx:if="{{speakingPicIndex==3}}" class="sound-style" src="../../dist/images/voice_icon_speech_sound_3.png"></image>
+      <image wx:if="{{speakingPicIndex==4}}" class="sound-style" src="../../dist/images/voice_icon_speech_sound_4.png"></image>
+      <image wx:if="{{speakingPicIndex==5}}" class="sound-style" src="../../dist/images/voice_icon_speech_sound_5.png"></image>
+    </view>
+     <view wx:if="{{!isSpeaking}}">
+      <view class="zan-col zan-col-18 info">
+        <view class="zan-col zan-col-18 zan-col-offset-3">使用技术：</view>
+         <view class="zan-col zan-col-18 zan-col-offset-5">微软luis语意平台</view>
+         <view class="zan-col zan-col-18 zan-col-offset-5">必应Speech语音转文字api</view>
+         <view class="zan-col zan-col-18 zan-col-offset-5">google翻译api</view>
+      </view>
+     
+      
+    </view>
+  </view>
+
+  <view class="record-switch">
+    <view class="big-btn" bindtouchstart="startRecord" bindtouchend="stopRecord">
+      <image class="record-start" mode="scaleToFill" src="{{isRecording?recordUi.recording:recordUi.record}}"></image>
+    </view>
+    <view class="tip">
+      <text>按住向我提问</text>
+     <button class="zan-btn zan-btn--small zan-icon zan-icon-like-o" open-type="share">分享</button>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,4 @@
+<view class="zan-cell zan-cell--access">
+  <view class="zan-cell__bd">TODO</view>
+  <view class="zan-cell__ft"></view>
+</view>

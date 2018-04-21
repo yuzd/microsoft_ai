@@ -1,0 +1,38 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/my/my",
+    "pages/todo/todo",
+    "pages/about/about"
+  ],
+  "window": {
+    "navigationBarTitleText": "微软人工智能实验室",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#34A2DA",
+    "navigationBarTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#555",
+    "selectedColor": "#34A2DA",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "dist/images/record.png",
+        "selectedIconPath": "dist/images/record_selected.png",
+        "text": "单词拼写"
+     },
+  
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "dist/images/my_icon.png",
+        "selectedIconPath": "dist/images/my_active_icon.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
