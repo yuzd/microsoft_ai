@@ -1,2 +1,2 @@
 
-![image](https://github.com/yuzd/miscrosoft_ai/blob/github/microsoft_ai_demo.gif)
+![image](https://github.com/yuzd/microsoft_ai/blob/master/microsoft_ai_demo.gif)
